@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB ZAKY UIN SUSKA - Pelajaran Bahasa Arab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styles */
+    body {
+      font-family: 'Cairo', sans-serif; /* Modern Arabic-friendly font */
+      background: linear-gradient(to bottom right, #0a1128, #03081e); /* Dark blue/black gradient for futuristic feel */
+      margin: 0;
+      padding: 0;
+      color: #e0e0e0; /* Lighter text for dark background */
+      line-height: 1.8; /* Increased line height for better readability on dark background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #1a2a51; /* Darker blue for header */
+      color: #e0e0e0;
+      padding: 30px 0; /* More padding for a grander feel */
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+      margin-bottom: 40px; /* More space below header */
+      border-bottom: 3px solid #00c7e5; /* Neon blue accent line */
+    }
+
+    header h1 {
+      font-family: 'Amiri', serif; /* Elegant font for titles */
+      margin: 0;
+      font-size: 3em; /* Larger title */
+      letter-spacing: 2px; /* More spacing for futuristic look */
+      text-shadow: 0 0 15px rgba(0, 199, 229, 0.6); /* Glow effect */
+      color: #00c7e5; /* Neon blue for title */
+    }
+
+    header p {
+      font-size: 1.2em; /* Slightly larger text */
+      margin-top: 15px;
+      color: #b0b0b0;
+    }
+
+    /* Container for main content */
+    .container {
+      width: 90%;
+      max-width: 960px; /* Slightly wider container */
+      padding: 30px;
+      background: rgba(26, 42, 81, 0.9); /* Slightly transparent dark blue */
+      border-radius: 15px; /* More rounded corners */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Stronger, deeper shadow */
+      margin-bottom: 40px;
+      border: 1px solid rgba(0, 199, 229, 0.3); /* Subtle neon border */
+    }
+
+    /* Section Titles */
+    h1, h2 {
+      text-align: right; /* Align right for RTL */
+      color: #00eaff; /* Brighter neon blue for headings */
+      margin-bottom: 25px;
+      font-family: 'Amiri', serif;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.4); /* Subtle glow */
+    }
+
+    /* Card Styles */
+    .card {
+      background: #2b3a62; /* Slightly lighter dark blue for cards */
+      padding: 30px; /* More padding */
+      margin: 25px 0; /* More margin between cards */
+      border-radius: 12px; /* Consistent rounded corners */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Softer shadow */
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+      border-left: 4px solid #00c7e5; /* Neon accent left border */
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+      border-left-color: #00eaff; /* Change border color on hover */
+    }
+
+    .card h2 {
+      color: #00c7e5; /* Neon blue for card titles */
+      margin-top: 0;
+      font-size: 2em; /* Larger card titles */
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; /* Align to right for RTL */
+      border-bottom: 1px solid rgba(0, 199, 229, 0.2); /* Subtle separator */
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-shadow: none; /* No glow on card titles */
+    }
+
+    .card h2 a {
+      text-decoration: none;
+      color: #00c7e5;
+    }
+
+    .card p {
+      font-size: 1.15em; /* Slightly larger text in cards */
+      color: #c0c0c0; /* Lighter text for card content */
+      margin-bottom: 15px;
+      text-align: right; /* Align right for RTL */
+    }
+
+    /* Input Field Styles */
+    input[type="text"] {
+      width: calc(100% - 24px); /* Adjust width for padding */
+      padding: 15px; /* More padding */
+      margin-top: 15px;
+      border: 1px solid #00c7e5; /* Neon border */
+      border-radius: 8px; /* More rounded */
+      font-size: 1.1em; /* Larger font */
+      background-color: #0a1128; /* Dark background for input */
+      color: #e0e0e0; /* Light text for input */
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      direction: rtl; /* Ensure right-to-left input for Arabic */
+      text-align: right;
+    }
+
+    input[type="text"]:focus {
+      border-color: #00eaff; /* Brighter neon on focus */
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.6); /* Stronger glow on focus */
+    }
+
+    /* Audio Player Styles */
+    audio {
+      width: 100%;
+      max-width: 500px; /* Slightly larger audio player */
+      margin-top: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #1a2a51; /* Dark background for audio player */
+    }
+
+    /* Footer Styles */
+    footer {
+      margin-top: 50px; /* More space above footer */
+      padding: 25px;
+      color: #909090; /* Softer color for footer text */
+      font-size: 0.95em;
+      text-align: center;
+      width: 100%;
+      background-color: #1a2a51; /* Dark background */
+      border-top: 1px solid rgba(0, 199, 229, 0.2); /* Subtle neon border */
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Shadow for footer */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .container {
+        width: 95%;
+        padding: 20px;
+      }
+      .card {
+        padding: 20px;
+      }
+      .card h2 {
+        font-size: 1.6em;
+      }
+      input[type="text"] {
+        padding: 12px;
+      }
+    }
+
+    /* Font for placeholder, if needed */
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #888;
+      opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #888;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>السلام عليكم ورحمة الله وبركاته</h1>
+    <p>أهلا وسهلا اسمي محمد زكي عزيز</p>
+    <p>هيا نتعلم اللغة العربية - اللغة العربية سهلة</p>
+  </header>
+
+  <div class="container">
+    <h1>📘 الدرس الأول: التحية</h1>
+
+    <div class="card">
+      <h2><a href="#">Materi</a></h2>
+      <p>السلام عليكم - Assalamu’alaikum (Semoga keselamatan atasmu)</p>
+      <p>وعليكم السلام - Wa’alaikumussalam (Dan atasmu juga keselamatan)</p>
+      <p>كيف حالك؟ - Kaifa ḥāluka/ḥāluki? (Apa kabar?)</p>
+      <p>أنا بخير، الحمد لله - Ana bikhayr, alḥamdu lillāh (Saya baik-baik saja, alhamdulillah)</p>
+    </div>
+
+    <div class="card">
+      <h2><a href="#">Latihan</a></h2>
+      <p>1. Apa arti dari "السلام عليكم"?</p>
+      <input type="text" placeholder="Tulis jawabanmu di sini">
+    </div>
+
+    <audio controls>
+      <source src="salam.mp3" type="audio/mpeg">
+      Browsermu tidak mendukung audio.
+    </audio>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 WEB ZAKY UIN SUSKA. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
